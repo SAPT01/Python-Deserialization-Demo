@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}All posts - CyberBlog{% endblock %}
+{% block content %}
+<h1>All posts</h1>
+{% for p in posts %}
+  <article class="mb-4">
+    <h3><a href="{{ url_for('post_detail', slug=p.slug) }}">{{ p.title }}</a></h3>
+    <p class="text-muted">{{ p.created_at.strftime('%Y-%m-%d') }} • {{ p.topic }}</p>
+    <p>{{ p.content[:240] }}{% if p.content|length > 240 %}...{% endif %}</p>
+  </article>
+{% endfor %}
+{% endblock %}

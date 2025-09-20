@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Topics - CyberBlog{% endblock %}
+{% block content %}
+<h1>Topics</h1>
+<ul>
+  {% for t in topics %}
+    <li>{{ t }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
